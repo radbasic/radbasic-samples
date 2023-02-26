@@ -1,0 +1,3 @@
+arch=x86
+VisualStylesEnabled=False
+WorkDirectory=%TEMP%\radbasic
