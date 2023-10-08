@@ -12,13 +12,16 @@ Begin VB.Form FrmChat
    Begin VB.TextBox txtAPIKey 
       Height          =   285
       Left            =   1320
-      TabIndex        =   8
+      Locked          =   0   'False
+      PasswordChar    =   "*"
+      TabIndex        =   3
       Top             =   480
       Width           =   7935
    End
    Begin VB.TextBox txtAnswer 
       Height          =   3675
       Left            =   600
+      Locked          =   0   'False
       MultiLine       =   -1  'True
       TabIndex        =   2
       Top             =   2160
@@ -35,6 +38,7 @@ Begin VB.Form FrmChat
    Begin VB.TextBox txtQuestion 
       Height          =   525
       Left            =   600
+      Locked          =   0   'False
       MultiLine       =   -1  'True
       TabIndex        =   0
       Top             =   1200
@@ -44,17 +48,9 @@ Begin VB.Form FrmChat
       Caption         =   "API Key:"
       Height          =   255
       Left            =   600
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   480
       Width           =   615
-   End
-   Begin VB.Label Label4 
-      Caption         =   "davinci"
-      Height          =   255
-      Left            =   720
-      TabIndex        =   6
-      Top             =   120
-      Width           =   1095
    End
    Begin VB.Label Label3 
       Caption         =   "AI:"
@@ -71,14 +67,6 @@ Begin VB.Form FrmChat
       TabIndex        =   4
       Top             =   1320
       Width           =   375
-   End
-   Begin VB.Label Label1 
-      Caption         =   "Engine: "
-      Height          =   240
-      Left            =   120
-      TabIndex        =   3
-      Top             =   120
-      Width           =   600
    End
 End
 Attribute VB_Name = "FrmChat"
@@ -100,7 +88,7 @@ Private Sub cmdSend_Click()
     
     
     ' **** Call REST API **** '
-    urlOpenAI = "https://api.openai.com/v1/completions"
+    urlOpenAI = "https://api.openai.com/v1/chat/completions"
     
     Set objHTTP = CreateObject("MSXML2.ServerXMLHTTP")
     objHTTP.Open "POST", urlOpenAI, False
@@ -125,10 +113,10 @@ Private Sub cmdSend_Click()
         objHTTP.setRequestHeader "Content-Type", "application/json"
         objHTTP.setRequestHeader "Authorization", paramUserApiKey
         
-        ' txtQuestion.Tex => Input text from user
-        sBody = "{""model"": ""text-davinci-003"", ""prompt"" : """ & txtQuestion.Text & """," & """max_tokens"" : 50" & "}"
+        ' txtQuestion.Text => Input text from user
+        sBody = "{ ""model"": ""gpt-3.5-turbo"", ""messages"": [ {""role"": ""user"", ""content"": """ & txtQuestion.Text & """} ] }"
         
-        objHTTP.sEnd (sBody)
+        objHTTP.send (sBody)
         result = objHTTP.responseText
         
         'Set objHTTP = Nothing
@@ -137,7 +125,7 @@ Private Sub cmdSend_Click()
         Dim idxStart As Long, idxEnd As Long, strToSearchLength As Long
         Dim strToSearch As String
         
-        strToSearch = "text"":"""
+        strToSearch = "content"":"""
         strToSearchLength = Len(strToSearch)
             
         idxStart = InStr(1, result, strToSearch)
