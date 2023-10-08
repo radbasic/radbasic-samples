@@ -2,3 +2,5 @@
 OpenAI_ChatVB6/build/
 
 OpenAI_ChatVB6/tmp/
+
+*.vbw
