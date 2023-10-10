@@ -1,3 +1,0 @@
-# As samples will go to install dir, and install dir could be a protected dir as %PROGRAM FILES%
-# Generated intermediate file and exe will be written in TMP PATH under user profile.
-WorkDirectory=%TEMP%\radbasic
