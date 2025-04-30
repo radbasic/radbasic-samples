@@ -3,7 +3,7 @@ Begin VB.Form FrmMain
    Caption         =   "Basic Notepad"
    ClientHeight    =   7935
    ClientLeft      =   165
-   ClientTop       =   735
+   ClientTop       =   810
    ClientWidth     =   12000
    LinkTopic       =   "Form1"
    ScaleHeight     =   7935
@@ -47,6 +47,8 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Option Explicit
+
 Private Sub MenuEditFind_Click()
     FrmFind.Show
 End Sub

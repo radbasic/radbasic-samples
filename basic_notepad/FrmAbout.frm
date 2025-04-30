@@ -55,8 +55,8 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Option Explicit
 
-Rem Option Explicit
 Private Sub cmdOK_Click()
   Unload Me
 End Sub

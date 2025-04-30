@@ -1,5 +1,5 @@
 VERSION 5.00
-Begin VB.Form FrmFind
+Begin VB.Form FrmFind 
    Caption         =   "FrmFind"
    ClientHeight    =   1455
    ClientLeft      =   45
@@ -11,8 +11,8 @@ Begin VB.Form FrmFind
    ScaleHeight     =   1455
    ScaleWidth      =   6135
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   3
-   Begin VB.CommandButton CmdSearch
+   StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton CmdSearch 
       Caption         =   "Search"
       Height          =   375
       Left            =   4440
@@ -20,15 +20,14 @@ Begin VB.Form FrmFind
       Top             =   960
       Width           =   1455
    End
-   Begin VB.TextBox TextSearch
+   Begin VB.TextBox TextSearch 
       Height          =   285
       Left            =   960
-      MultiLine       =   0   'False
       TabIndex        =   1
       Top             =   240
       Width           =   3135
    End
-   Begin VB.Label LabelSearchText
+   Begin VB.Label LabelSearchText 
       Caption         =   "Search:"
       Height          =   255
       Left            =   120
@@ -43,6 +42,8 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Option Explicit
+
 Private Sub CmdSearch_Click()
     MsgBox "Search text..."
     Unload Me
