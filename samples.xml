@@ -3,7 +3,7 @@
     <sampleGroup title="Sample Apps">
         <sample title="Basic Notepad" featured="true" description="Simple clone of Windows Notepad with menus and dialogs." tag="basic_notepad#BasicNotepad.vbp" />
         <sample title="Basic Calculator" featured="true" description="Calculator with basic maths operations." tag="BasicCalculator#BasicCalculator.vbp" />
-        <sample title="OpenAI ChatGPT" featured="true" description="OpenAI interactive chat using ChatGPT public API." tag="OpenAI_ChatVB6#OpenAIChatVB6.vbp" />
+        <sample title="OpenAI ChatGPT" featured="true" description="OpenAI interactive chat using ChatGPT public API." tag="OpenAI_ChatGPT#OpenAIChatGPT.vbp" />
     </sampleGroup>
     <sampleGroup title="Using RAD Basic Language">
         <sample title="Factorial" description="Project calculating Factorial of a number using recursion." tag="Factorial#Factorial.vbp" />
