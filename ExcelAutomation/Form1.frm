@@ -48,7 +48,7 @@ Private Sub cmdUpdateExcel_Click()
     ObjExcel.Worksheets("Sheet X").Cells(2, 1) = "Edited From RAD Basic"
 
     ' Save and close excel
-    WorkBook.Close SaveChanges:=True
+    WorkBook.Close True ' SaveChanges:=True
     ObjExcel.Quit
     
     ' Recommended for memory management and ref counter
