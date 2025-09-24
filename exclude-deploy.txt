@@ -1,0 +1,6 @@
+.git\
+.gitignore\
+README.md
+exclude-deploy.txt
+tmp
+build
